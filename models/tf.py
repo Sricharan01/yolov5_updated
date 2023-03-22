@@ -4,10 +4,10 @@ TensorFlow, Keras and TFLite versions of YOLOv5
 Authored by https://github.com/zldrobit in PR https://github.com/ultralytics/yolov5/pull/1127
 
 Usage:
-    $ python models/tf.py --weights yolov5s.pt
+    $ python models/tf.py --weights yolov5l.pt
 
 Export:
-    $ python export.py --weights yolov5s.pt --include saved_model pb tflite tfjs
+    $ python export.py --weights yolov5l.pt --include saved_model pb tflite tfjs
 """
 
 import argparse
@@ -436,7 +436,7 @@ def parse_model(d, ch, model, imgsz):  # model_dict, input_channels(3)
 
 class TFModel:
     # TF YOLOv5 model
-    def __init__(self, cfg='yolov5s.yaml', ch=3, nc=None, model=None, imgsz=(640, 640)):  # model, channels, classes
+    def __init__(self, cfg='yolov5l.yaml', ch=3, nc=None, model=None, imgsz=(640, 640)):  # model, channels, classes
         super().__init__()
         if isinstance(cfg, dict):
             self.yaml = cfg  # model dict
@@ -563,7 +563,7 @@ def representative_dataset_gen(dataset, ncalib=100):
 
 
 def run(
-        weights=ROOT / 'yolov5s.pt',  # weights path
+        weights=ROOT / 'yolov5l.pt',  # weights path
         imgsz=(640, 640),  # inference size h,w
         batch_size=1,  # batch size
         dynamic=False,  # dynamic batch size
@@ -589,7 +589,7 @@ def run(
 
 def parse_opt():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--weights', type=str, default=ROOT / 'yolov5s.pt', help='weights path')
+    parser.add_argument('--weights', type=str, default=ROOT / 'yolov5l.pt', help='weights path')
     parser.add_argument('--imgsz', '--img', '--img-size', nargs='+', type=int, default=[640], help='inference size h,w')
     parser.add_argument('--batch-size', type=int, default=1, help='batch size')
     parser.add_argument('--dynamic', action='store_true', help='dynamic batch size')
