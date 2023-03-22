@@ -23,7 +23,7 @@ def autobatch(model, imgsz=640, fraction=0.8, batch_size=16):
     # Usage:
     #     import torch
     #     from utils.autobatch import autobatch
-    #     model = torch.hub.load('ultralytics/yolov5', 'yolov5s', autoshape=False)
+    #     model = torch.hub.load('ultralytics/yolov5', 'yolov5l', autoshape=False)
     #     print(autobatch(model))
 
     # Check device
