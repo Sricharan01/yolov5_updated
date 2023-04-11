@@ -1,13 +1,44 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Codespaces
+Marketplace
+Explore
+ 
+@Sricharan01 
+Sricharan01
+/
+yolov5_updated
+Public
+Cannot fork because you own this repository and are not a member of any organizations.
+Code
+Issues
+Pull requests
+1
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+yolov5_updated/models/tf.py /
+@Sricharan01
+Sricharan01 yolov5x again
+Latest commit d1fb148 3 weeks ago
+ History
+ 1 contributor
+608 lines (509 sloc)  26.4 KB
+ 
+
 # YOLOv5 🚀 by Ultralytics, GPL-3.0 license
 """
 TensorFlow, Keras and TFLite versions of YOLOv5
 Authored by https://github.com/zldrobit in PR https://github.com/ultralytics/yolov5/pull/1127
-
 Usage:
-    $ python models/tf.py --weights yolov5l.pt
-
+    $ python models/tf.py --weights yolov5x.pt
 Export:
-    $ python export.py --weights yolov5l.pt --include saved_model pb tflite tfjs
+    $ python export.py --weights yolov5x.pt --include saved_model pb tflite tfjs
 """
 
 import argparse
@@ -436,7 +467,7 @@ def parse_model(d, ch, model, imgsz):  # model_dict, input_channels(3)
 
 class TFModel:
     # TF YOLOv5 model
-    def __init__(self, cfg='yolov5l.yaml', ch=3, nc=None, model=None, imgsz=(640, 640)):  # model, channels, classes
+    def __init__(self, cfg='yolov5x.yaml', ch=3, nc=None, model=None, imgsz=(640, 640)):  # model, channels, classes
         super().__init__()
         if isinstance(cfg, dict):
             self.yaml = cfg  # model dict
@@ -563,7 +594,7 @@ def representative_dataset_gen(dataset, ncalib=100):
 
 
 def run(
-        weights=ROOT / 'yolov5l.pt',  # weights path
+        weights=ROOT / 'yolov5x.pt',  # weights path
         imgsz=(640, 640),  # inference size h,w
         batch_size=1,  # batch size
         dynamic=False,  # dynamic batch size
@@ -589,7 +620,7 @@ def run(
 
 def parse_opt():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--weights', type=str, default=ROOT / 'yolov5l.pt', help='weights path')
+    parser.add_argument('--weights', type=str, default=ROOT / 'yolov5x.pt', help='weights path')
     parser.add_argument('--imgsz', '--img', '--img-size', nargs='+', type=int, default=[640], help='inference size h,w')
     parser.add_argument('--batch-size', type=int, default=1, help='batch size')
     parser.add_argument('--dynamic', action='store_true', help='dynamic batch size')
@@ -606,3 +637,18 @@ def main(opt):
 if __name__ == '__main__':
     opt = parse_opt()
     main(opt)
+Footer
+© 2023 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+yolov5_updated/tf.py at master · Sricharan01/yolov5_updated
