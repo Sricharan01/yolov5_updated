@@ -3,7 +3,7 @@
 YOLO-specific modules
 
 Usage:
-    $ python models/yolo.py --cfg yolov5l.yaml
+    $ python models/yolo.py --cfg yolov5x.yaml
 """
 
 import argparse
@@ -164,7 +164,7 @@ class BaseModel(nn.Module):
 
 class DetectionModel(BaseModel):
     # YOLOv5 detection model
-    def __init__(self, cfg='yolov5l.yaml', ch=3, nc=None, anchors=None):  # model, input channels, number of classes
+    def __init__(self, cfg='yolov5x.yaml', ch=3, nc=None, anchors=None):  # model, input channels, number of classes
         super().__init__()
         if isinstance(cfg, dict):
             self.yaml = cfg  # model dict
@@ -266,7 +266,7 @@ Model = DetectionModel  # retain YOLOv5 'Model' class for backwards compatibilit
 
 class SegmentationModel(DetectionModel):
     # YOLOv5 segmentation model
-    def __init__(self, cfg='yolov5l-seg.yaml', ch=3, nc=None, anchors=None):
+    def __init__(self, cfg='yolov5x-seg.yaml', ch=3, nc=None, anchors=None):
         super().__init__(cfg, ch, nc, anchors)
 
 
@@ -358,7 +358,7 @@ def parse_model(d, ch):  # model_dict, input_channels(3)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--cfg', type=str, default='yolov5l.yaml', help='model.yaml')
+    parser.add_argument('--cfg', type=str, default='yolov5x.yaml', help='model.yaml')
     parser.add_argument('--batch-size', type=int, default=1, help='total batch size for all GPUs')
     parser.add_argument('--device', default='', help='cuda device, i.e. 0 or 0,1,2,3 or cpu')
     parser.add_argument('--profile', action='store_true', help='profile model speed')
