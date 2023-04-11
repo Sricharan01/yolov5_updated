@@ -449,7 +449,7 @@ def check_imshow(warn=False):
         return False
 
 
-def check_suffix(file='yolov5l.pt', suffix=('.pt',), msg=''):
+def check_suffix(file='yolov5x.pt', suffix=('.pt',), msg=''):
     # Check file(s) for acceptable suffix
     if file and suffix:
         if isinstance(suffix, str):
