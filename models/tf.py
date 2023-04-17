@@ -24,7 +24,7 @@ Insights
 Settings
 yolov5_updated/models/tf.py /
 @Sricharan01
-Sricharan01 yolov5x again
+Sricharan01 yolov5l again
 Latest commit d1fb148 3 weeks ago
  History
  1 contributor
@@ -36,9 +36,9 @@ Latest commit d1fb148 3 weeks ago
 TensorFlow, Keras and TFLite versions of YOLOv5
 Authored by https://github.com/zldrobit in PR https://github.com/ultralytics/yolov5/pull/1127
 Usage:
-    $ python models/tf.py --weights yolov5x.pt
+    $ python models/tf.py --weights yolov5l.pt
 Export:
-    $ python export.py --weights yolov5x.pt --include saved_model pb tflite tfjs
+    $ python export.py --weights yolov5l.pt --include saved_model pb tflite tfjs
 """
 
 import argparse
